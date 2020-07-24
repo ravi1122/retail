@@ -6,10 +6,10 @@
   "author": "Saint Walker <blcorps9@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn clean && cross-env NODE_ENV=development webpack-dev-server --progress",
+    "start": "node ./backend/index.js",
     "clean": "rimraf ./dist",
     "build": "yarn clean && cross-env NODE_ENV=production webpack --progress",
-    "api": "node ./backend/index.js",
+    "api": " yarn clean && cross-env NODE_ENV=development webpack-dev-server --progress",
     "dev": "npm-run-all --parallel api start"
   },
   "dependencies": {

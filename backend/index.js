@@ -11,7 +11,7 @@ const router = require("./router");
 
 const app = express();
 const isProduction = process.env.NODE_ENV === "production";
-const appPort = Number(process.env.APP_PORT || config.APP_PORT);
+// const appPort = Number(process.env.PORT || config.PORT);
 
 // Setup Public directory
 app.use(express.static(path.join(__dirname, "dist")));
@@ -33,8 +33,8 @@ if (!isProduction) {
 router(app);
 
 // Start the application
-app.listen(appPort, (err) => {
+app.listen(PORT, (err) => {
   if (err) throw err;
 
-  console.log(`App is running on ${appPort}`);
+  console.log(`App is running on ${PORT}`);
 });
